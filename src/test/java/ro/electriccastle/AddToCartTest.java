@@ -53,6 +53,12 @@ public class AddToCartTest {
         WebElement addedToCart = driver.findElement(By.cssSelector("body > div:nth-child(2) > div.modal.fade.in > div > div > div.modal-header.text-center > h4"));
         Assert.assertTrue(addedToCart.isDisplayed());
         System.out.println(addedToCart.getText());
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         Assert.assertTrue(addedToCart.getText().toUpperCase().contains("YOU ADDED TO YOUR CART"));
 
 
